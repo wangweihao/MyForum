@@ -40,7 +40,15 @@ public class Post {
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "topic_id")
-    private Topic topic;
+    private Topic topicId;
+
+    public Topic getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Topic topicId) {
+        this.topicId = topicId;
+    }
 
     public void setPostId(int postId) {
         this.postId = postId;
@@ -66,10 +74,6 @@ public class Post {
         this.user = user;
     }
 
-    public void setTopic(Topic topic) {
-        this.topic = topic;
-    }
-
     public int getPostId() {
         return postId;
     }
@@ -92,9 +96,5 @@ public class Post {
 
     public User getUser() {
         return user;
-    }
-
-    public Topic getTopic() {
-        return topic;
     }
 }
